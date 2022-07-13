@@ -1,0 +1,27 @@
+.navbar {
+    background-color: white;
+    font-size: xx-large;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: 0%;
+    padding-left: 10px;
+
+
+
+
+
+}
+
+.list-group-item {
+
+    align-self: center;
+    background-color: blue;
+    color: red;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+*{
+    box-sizing: border-box;
+}
+
