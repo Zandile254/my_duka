@@ -10,8 +10,12 @@ from datetime import datetime
 # we are creating a variable that we use to acccess the variable we add the __name__ argument so that we ca pass the context
 app = Flask(__name__)
 
-conn = psycopg2.connect(user="postgres", password="19972612",
-                        host="localhost", port="5432", database="myduka")
+# conn = psycopg2.connect(user="postgres", password="19972612",
+#                         host="localhost", port="5432", database="myduka")
+# cur = conn.cursor()
+
+conn = psycopg2.connect(user="gjdtgowzyfsiuo", password="29739bef24a51e3f8aacbb5e59657caa0942972a937183e2c4338571363ed1d1",
+                        host="ec2-52-49-120-150.eu-west-1.compute.amazonaws.com", port="5432", database="db0p3t0gm2eut8")
 cur = conn.cursor()
 
 
