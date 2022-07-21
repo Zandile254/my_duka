@@ -20,8 +20,8 @@ cur = conn.cursor()
 
 @app.route("/")
 def hello_world():
-    name = "Zandile"
-    return render_template("index.html", name=name)
+
+    return render_template("index.html" )
 
 # inventories route
 
@@ -88,14 +88,14 @@ def view_sales(pid):
 # dashboard route
 @app.route("/dashboard")
 def dashboard():
-    cur.execute ("select productsdets.name, sum (productsdets.selling_price * sales.quantity) from productsdets join sales on sales.pid = productsdets.id group by name;")
+    cur.execute ("select productsdets.name, sum (productsdets.selling_price * sales.quantity) from productsdets join sales on sales.pid = productsdets.id group by name order by sum;")
     items = cur.fetchall()
     list1 = []
     list2 = []
     for items in items:
         list1.append(items[0])
         list2.append(float(items[1]))
-    cur.execute(" select to_char(sales.created_at,'YYYY-MM') sales,sum(sales.quantity*productsdets.selling_price) as amount from productsdets join sales on sales.pid=productsdets.id group by sales;")
+    cur.execute(" select to_char(sales.created_at,'YYYY-MM') sales,sum(sales.quantity*productsdets.selling_price) as amount from productsdets join sales on sales.pid=productsdets.id group by sales order by sales;")
     mysales = cur.fetchall()
     mysales1 =[]
     mysales2 =[]
